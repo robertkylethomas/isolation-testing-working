@@ -1,13 +1,14 @@
-<div>
-
+<div class="row">
   <div *ngIf="!isListVisible()">
     <h4>NO LLAMAS!</h4>
   </div>
 
   <ng-container *ngIf="isListVisible()">
-    <div *ngFor="let llama of llamas">
-      {{ llama.name }}
+    <div class="col-6 col-md-3 llama-thumb" *ngFor="let llama of llamas">
+      <div>
+        <img [src]="'assets/images/llamas/' + llama.imageFile" alt="{{ llama.name }}" />
+      </div>
+      <span>{{ llama.name }}</span>
     </div>
   </ng-container>
-
 </div>

@@ -1,15 +1,17 @@
+import '@hirez_io/jasmine-given';
+
 import { TestBed } from '@angular/core/testing';
 import { FrontComponent } from './front.component';
-
 describe('FrontComponent', () => {
-  let componentUnderTest: FrontComponent, actualValue: any;
+  let componentUnderTest: FrontComponent;
+  let actualValue: any;
 
   Given(() => {
     TestBed.configureTestingModule({
       providers: [FrontComponent]
     });
 
-    componentUnderTest = TestBed.get(FrontComponent);
+    componentUnderTest = TestBed.inject(FrontComponent);
   });
 
   describe('INIT', () => {
@@ -23,16 +25,16 @@ describe('FrontComponent', () => {
       actualValue = componentUnderTest.isListVisible();
     });
 
-    describe('there are llamas', () => {
+    describe('GIVEN there are llamas THEN return true', () => {
       Given(() => {
-        componentUnderTest.llamas = [{ name: 'Billy' }];
+        componentUnderTest.llamas = [{ name: 'Billy', imageFile: '1.jpg' }];
       });
       Then(() => {
         expect(actualValue).toEqual(true);
       });
     });
 
-    describe('no llamas', () => {
+    describe('GIVEN there areno llamas THEN return false', () => {
       Given(() => {
         componentUnderTest.llamas = [];
       });

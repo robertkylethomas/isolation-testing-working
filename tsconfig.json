@@ -12,10 +12,12 @@
     "target": "ES2022",
     "typeRoots": [
       "node_modules/@types",
-      "node_modules/@hirez_io"
+      "node_modules/@hirez_io",
+      "node_modules",
     ],
     "types": [
-      "@hirez_io/jasmine-given"
+      "@hirez_io/jasmine-given",
+      "jasmine"
     ],
     "lib": [
       "es2018",

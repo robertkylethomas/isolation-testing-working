@@ -37,7 +37,6 @@
 /** IE10 and IE11 requires the following for the Reflect API. */
 // import 'core-js/es6/reflect';
 
-
 /**
  * By default, zone.js will patch all possible macroTask and DomEvents
  * user can disable parts of macroTask/DomEvents patch by setting following flags
@@ -62,15 +61,12 @@
  *
  */
 
-
 /***************************************************************************************************
  * Zone JS is required by Angular itself.
  */
-import 'zone.js';  // Included with Angular CLI.
-
-
+import 'zone.js';
+import 'zone.js/zone-testing';
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
-
